@@ -15,6 +15,11 @@ const ContextProvider = ({children}) => {
           setCartItems(prev => [...prev, img])
         
       }
+  
+    const handleRemoveItem = (img) => {
+      setCartItems(prev => prev.filter(item => item.id !== img.id))
+  }
+  
       const toggleFavorite = (id) => {
       const isFavoritePhoto = allPhotos.map(favorite => {
 
@@ -46,7 +51,8 @@ const ContextProvider = ({children}) => {
           allPhotos,
           toggleFavorite,
           handleCartItems,
-          cartItems
+          cartItems,
+          handleRemoveItem
           
         }
       } > {

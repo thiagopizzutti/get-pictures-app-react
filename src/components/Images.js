@@ -14,12 +14,10 @@ const Images = ({ className, img }) => {
 
   } 
   
-  
-  
-  
+
   const [isHovered, setIsHovered] = useState(false)
   
-  const { toggleFavorite, handleCartItems, cartItems } = useContext(Context)
+  const { toggleFavorite, handleCartItems, cartItems, handleRemoveItem } = useContext(Context)
   
   const handleHoverEnter = useCallback(() => {
   setIsHovered(true)
@@ -54,7 +52,9 @@ const Images = ({ className, img }) => {
     const alreadyInCart = cartItems.some(item => item.id ===img.id)
     
     if (alreadyInCart) {
-      return <i className="ri-add-circle-fill cart"></i>;
+      return <i
+        onClick={() => handleRemoveItem(img)}
+        className="ri-add-circle-fill cart"></i>;
     } else if (isHovered) {
       return (
         <i onClick={() => handleCartItems(img)} className="ri-add-circle-line cart"></i>
