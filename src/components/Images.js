@@ -3,15 +3,14 @@ import React, { useState, useCallback} from 'react'
 const Images = ({ className, img }) => {
   const [isHovered, setIsHovered] = useState(false)
 
-  console.log(isHovered);
-
-  const handleHoverEnter = () => {
+  const handleHoverEnter = useCallback(() => {
   setIsHovered(true)
-  }
-  const handleHoverLeave = () => {
+    console.log(isHovered);
+  },[isHovered])
+  const handleHoverLeave = useCallback(() => {
   setIsHovered(false)
-
-  }
+    console.log(isHovered);
+  },[isHovered])
 
 
   return (
@@ -26,6 +25,12 @@ const Images = ({ className, img }) => {
         onMouseEnter={handleHoverEnter}
         onMouseLeave={handleHoverLeave}
       />
+      {isHovered && (
+        <>
+          <i className="ri-heart-line favorite"></i>
+          <i className="ri-add-circle-line cart"></i>
+        </>
+      )}
       
     </div>
   )
