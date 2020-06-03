@@ -26,7 +26,7 @@ main.cart-page {
   padding: 10px;
 }
 
-.cart-page > h1 {
+.cart-page>h1 {
   text-align: center;
 }
 
@@ -40,18 +40,18 @@ main.cart-page {
   justify-content: center;
 }
 
-div.order-button > button {
+div.order-button>button {
   border-color: var(--black);
   cursor: pointer;
   padding: 15px;
   transition: all 0.2s ease-in-out;
 }
 
-div.order-button > button:focus {
+div.order-button>button:focus {
   outline: none;
 }
 
-div.order-button > button:disabled {
+div.order-button>button:disabled {
   border-color: lightgray;
 }
 

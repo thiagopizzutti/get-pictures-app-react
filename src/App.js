@@ -6,19 +6,21 @@ import Photos from "./pages/Photos"
 
 function App() {    
     return (
-      <div>
-        <Switch>
-            <Header />
-          <Route path='/'>
+      <>
+        <Header />
+          <Switch>
+          
+          <Route exact path='/' >
             <Photos />
-            <h1>Home Page</h1>
           </Route>
+          
           <Route path='/cart'>
-            <Cart />
-            
+            <Cart />            
           </Route>
+        
         </Switch>
-        </div>
+        
+      </>
 
     )
 }
