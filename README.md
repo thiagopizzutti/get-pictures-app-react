@@ -1,68 +1,77 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Get Pictures App - React
 
-## Available Scripts
+## About The Project
 
-In the project directory, you can run:
+This app is a basic E-Commerce example to buy photos. It was built to practice Javascript and React.
 
-### `yarn start`
+![Desktop views](public/screenshot.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Built With:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- [Javascript](https://nodejs.org/en/) - Programming language.
+- [ReactJS](https://expressjs.com/pt-br/) - A JavaScript library for building user interfaces.
 
-### `yarn test`
+<!-- GETTING STARTED -->
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `yarn build`
+### Installation
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repo
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```sh
+git clone https://github.com/thiagopizzutti/get-pictures-app-react
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install Yarn packages
 
-### `yarn eject`
+```sh
+yarn
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Run the app
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
+yarn start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<!-- USAGE EXAMPLES -->
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Usage
 
-## Learn More
+The project is deployed and can be accessed at https://app.netlify.com/sites/get-pictures-app/overview
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<!-- CONTRIBUTING -->
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributing
 
-### Code Splitting
+1. Fork the Project
+2. Create your Feature Branch
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```sh
+git checkout -b feature/AmazingFeature
+```
 
-### Analyzing the Bundle Size
+3. Commit your Changes
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```sh
+git commit -m 'Add some AmazingFeature'
+```
 
-### Making a Progressive Web App
+4. Push to the Branch
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```sh
+git push origin feature/AmazingFeature
+```
 
-### Advanced Configuration
+5. Open a Pull Request
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+<!-- CONTACT -->
 
-### Deployment
+## Contact
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Pedro Siqueira - [email](mailto:pedro.v.siqueira@gmail.com) - [linkedin](https://www.linkedin.com/in/pedrovsiqueira/)
 
-### `yarn build` fails to minify
+Thiago Pizzutti - [email](mailto:tpizzutti@gmail.com) - [linkedin](https://www.linkedin.com/in/pedrovsiqueira/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Fabrício Polato - [email](mailto:fabriciopolato@gmail.com) - [linkedin](https://www.linkedin.com/in/fabriciopolato/)
