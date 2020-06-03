@@ -6,12 +6,16 @@ import React, {
 import axios from 'axios';
 const Context = createContext();
 
-const ContextProvider = ({
-    children
-  }) => {
-    const [allPhotos, setAllPhotos] = useState([]);
+const ContextProvider = ({children}) => {
+  const [allPhotos, setAllPhotos] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
-    const toggleFavorite = (id) => {
+      const handleCartItems = (img) => {
+             
+          setCartItems(prev => [...prev, img])
+        
+      }
+      const toggleFavorite = (id) => {
       const isFavoritePhoto = allPhotos.map(favorite => {
 
         if (favorite.id === id) {
@@ -40,7 +44,10 @@ const ContextProvider = ({
     return ( <Context.Provider value = {
         {
           allPhotos,
-          toggleFavorite
+          toggleFavorite,
+          handleCartItems,
+          cartItems
+          
         }
       } > {
         children

@@ -7,8 +7,8 @@ const Images = ({ className, img }) => {
   Image.PropTypes = {
     className: PropTypes.string,
     img: PropTypes.shape({
-      id: PropTypes.string,
-      url: PropTypes.string,
+      id: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
       isFavorite: PropTypes.bool,
     })
 
@@ -19,7 +19,7 @@ const Images = ({ className, img }) => {
   
   const [isHovered, setIsHovered] = useState(false)
   
-  const { toggleFavorite } = useContext(Context)
+  const { toggleFavorite, handleCartItems, cartItems } = useContext(Context)
   
   const handleHoverEnter = useCallback(() => {
   setIsHovered(true)
@@ -30,26 +30,38 @@ const Images = ({ className, img }) => {
    
   },[])
 
-  const heartIcon = isHovered && !img.isFavorite &&(
-    <i
-      className = "ri-heart-line favorite"
-      onClick = {
-          () => toggleFavorite(img.id)
-        }
-    >
-  </i>)
+ 
+  const heartIcon = () => {
+    if (img.isFavorite) {
+      return (
+        <i
+          onClick={() => toggleFavorite(img.id)}
+          className="ri-heart-fill favorite"
+        ></i>
+      );
+    } else if (isHovered) {
+      return (
+        <i
+          onClick={() => toggleFavorite(img.id)}
+          className="ri-heart-line favorite"
+        ></i>
+      );
+    }
+  };
 
-  const heartIsFilled = isHovered && img.isFavorite &&(
-  <i
-  className = "ri-heart-fill favorite"
-  onClick = {
-      () => toggleFavorite(img.id)
-    } >
-    </i>)
-
-  const cartIcon = isHovered && < i className="ri-add-circle-line cart" >
-  </i>;
-
+  const cartIcon = () => {
+    
+    const alreadyInCart = cartItems.some(item => item.id ===img.id)
+    
+    if (alreadyInCart) {
+      return <i className="ri-add-circle-fill cart"></i>;
+    } else if (isHovered) {
+      return (
+        <i onClick={() => handleCartItems(img)} className="ri-add-circle-line cart"></i>
+      );
+    }
+  };
+  
   return (
     <div
       
@@ -61,9 +73,10 @@ const Images = ({ className, img }) => {
         src={img.url}
         alt='images'
         className="image-grid" />
-        {heartIcon}
-        {heartIsFilled}
-        {cartIcon}
+        {heartIcon()}
+        {cartIcon()}
+        
+       
         
       
     </div>
