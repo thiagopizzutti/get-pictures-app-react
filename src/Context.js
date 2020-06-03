@@ -16,23 +16,17 @@ const ContextProvider = ({
 
         if (favorite.id === id) {
           return {
-            ...allPhotos,
+            ...favorite,
             isFavorite: !favorite.isFavorite
           }
         }
-        return allPhotos
+        return favorite
       })
 
       setAllPhotos(isFavoritePhoto)
 
     }
-
-
-
-
-
-
-
+  
     useEffect(() => {
       axios
         .get(
@@ -43,16 +37,14 @@ const ContextProvider = ({
         .catch((err) => console.log(err));
     }, []);
 
-    return ( <
-      Context.Provider value = {
+    return ( <Context.Provider value = {
         {
           allPhotos,
           toggleFavorite
         }
       } > {
         children
-      } <
-      /Context.Provider>);
+      } </Context.Provider>);
     }
     export {
       ContextProvider,
