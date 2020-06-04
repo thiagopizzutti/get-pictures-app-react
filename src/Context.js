@@ -9,6 +9,8 @@ const Context = createContext();
 const ContextProvider = ({children}) => {
   const [allPhotos, setAllPhotos] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [isOrdered, setIsOrder] = useState(false);
+  
 
       const handleCartItems = (img) => {
              
@@ -42,6 +44,17 @@ const ContextProvider = ({children}) => {
       currency: "USD",
     });
   }
+
+  const placeOrder = () => {
+    setIsOrder(true)
+    setTimeout(() => {
+      console.log('PlaceOrder');
+  
+      
+      setCartItems([])
+      setIsOrder(false)
+    }, 2000);
+  }
   
     useEffect(() => {
       axios
@@ -59,8 +72,10 @@ const ContextProvider = ({children}) => {
           toggleFavorite,
           handleCartItems,
           cartItems,
-        handleRemoveItem,
-          calculateTotalCost
+          handleRemoveItem,
+          calculateTotalCost,
+          placeOrder,
+          isOrdered
           
         }
       } > {
