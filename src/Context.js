@@ -34,7 +34,14 @@ const ContextProvider = ({children}) => {
 
       setAllPhotos(isFavoritePhoto)
 
-    }
+      }
+  
+  const calculateTotalCost = () => {
+    return (cartItems.length * 5.99).toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+  }
   
     useEffect(() => {
       axios
@@ -52,7 +59,8 @@ const ContextProvider = ({children}) => {
           toggleFavorite,
           handleCartItems,
           cartItems,
-          handleRemoveItem
+        handleRemoveItem,
+          calculateTotalCost
           
         }
       } > {
