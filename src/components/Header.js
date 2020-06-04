@@ -12,7 +12,7 @@ function Header() {
   return (
     <header>
       <h2><Link to='/'>Pic Some</Link></h2>
-     <i className={`${cartClassName} ri-fw ri-2x`}></i>
+     <Link to='/cart'><i className={`${cartClassName} ri-fw ri-2x`}></i></Link>
     </header>
   );
 }
